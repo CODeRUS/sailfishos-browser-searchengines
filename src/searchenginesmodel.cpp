@@ -5,6 +5,7 @@
 #include <QDebug>
 #include <QDir>
 #include <QXmlQuery>
+#include <QXmlStreamReader>
 
 static const QString s_directory = QStringLiteral("/usr/lib/mozembedlite/chrome/embedlite/content/");
 static const QString s_extension = QStringLiteral(".xml");
@@ -140,23 +141,17 @@ SearchEnginesModel::ModelData SearchEnginesModel::loadModelData(const QString &f
         }
         return data;
     }
-    QXmlQuery query;
-    const QByteArray xmlData = searchEngine.readAll();
-    query.setFocus(QString::fromUtf8(xmlData));
-    if (xmlData.contains(QByteArrayLiteral("http://a9.com/-/spec/opensearch/1.1/"))) {
-        query.setQuery(QStringLiteral("declare default element namespace \"http://a9.com/-/spec/opensearch/1.1/\"; //ShortName/text()"));
-    } else {
-        query.setQuery(QStringLiteral("//ShortName/text()"));
-    }
-    if (!query.isValid()) {
-        if (ok) {
-            *ok = false;
-        }
-        return data;
-    }
     QString queryResult;
-    query.evaluateTo(&queryResult);
-    data.title = queryResult.trimmed();
+    QXmlStreamReader reader(&searchEngine);
+    while (!reader.atEnd()) {
+        QXmlStreamReader::TokenType token = reader.readNext();
+        if (token == QXmlStreamReader::StartElement && reader.name() == QStringLiteral("ShortName")) {
+            reader.readNext();
+            queryResult = reader.text().toString();
+            break;
+        }
+    }
+    data.title = queryResult;
     data.filename = searchEngine.fileName();
 
     if (ok) {

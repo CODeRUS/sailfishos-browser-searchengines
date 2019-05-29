@@ -3,13 +3,12 @@
 
 Name:       sailfishos-browser-searchengines
 Summary:    Manipulate Sailfish Browser search engines
-Version:    1.0.2
+Version:    1.0.3
 Release:    1
 Group:      Qt/Qt
-License:    LICENSE
-URL:        http://example.org/
+License:    WTFPL
+URL:        https://github.com/CODeRUS/sailfishos-browser-searchengines
 Source0:    %{name}-%{version}.tar.bz2
-Source100:  sailfishos-browser-searchengines.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
