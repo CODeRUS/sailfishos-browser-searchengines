@@ -141,8 +141,13 @@ SearchEnginesModel::ModelData SearchEnginesModel::loadModelData(const QString &f
         return data;
     }
     QXmlQuery query;
-    query.setFocus(&searchEngine);
-    query.setQuery(QStringLiteral("declare default element namespace \"http://a9.com/-/spec/opensearch/1.1/\"; //ShortName/text()"));
+    const QByteArray xmlData = searchEngine.readAll();
+    query.setFocus(QString::fromUtf8(xmlData));
+    if (xmlData.contains(QByteArrayLiteral("http://a9.com/-/spec/opensearch/1.1/"))) {
+        query.setQuery(QStringLiteral("declare default element namespace \"http://a9.com/-/spec/opensearch/1.1/\"; //ShortName/text()"));
+    } else {
+        query.setQuery(QStringLiteral("//ShortName/text()"));
+    }
     if (!query.isValid()) {
         if (ok) {
             *ok = false;
