@@ -8,6 +8,7 @@
 
 static const QString s_directory = QStringLiteral("/usr/lib/mozembedlite/chrome/embedlite/content/");
 static const QString s_extension = QStringLiteral(".xml");
+static const QString s_regexpRemover = QStringLiteral("[^\\w]");
 
 SearchEnginesModel::SearchEnginesModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -56,7 +57,8 @@ QHash<int, QByteArray> SearchEnginesModel::roleNames() const
 
 void SearchEnginesModel::add(const QString &title, const QString &data)
 {
-    const QString name = title.trimmed().toLower().remove(QChar(u':'));
+    QString name = title.trimmed().toLower();
+    name.replace(QRegExp(s_regexpRemover), QString());
     const QString filename = s_directory + name + s_extension;
 
     for (const ModelData &modelData : m_modelData) {
