@@ -85,6 +85,7 @@ Page {
                 placeholderText: qsTr("Search hostname")
                 label: placeholderText
                 focus: true
+                inputMethodHints: Qt.ImhUrlCharactersOnly
                 EnterKey.iconSource: "image://theme/icon-m-cloud-download"
                 EnterKey.onClicked: {
                     if (downloadButton.enabled) {
@@ -169,6 +170,7 @@ Page {
                 label: placeholderText
                 visible: downloadError
                 text: "https://www.google.com/searchdomaincheck?format=opensearch"
+                inputMethodHints: Qt.ImhUrlCharactersOnly
                 EnterKey.iconSource: "image://theme/icon-m-cloud-download"
                 EnterKey.onClicked: {
                     if (opensearchButon.enabled) {
