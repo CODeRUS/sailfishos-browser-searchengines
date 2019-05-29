@@ -1,0 +1,5 @@
+[D-BUS Service]
+Name=org.coderus.searchengines
+Interface=org.coderus.searchengines
+Exec=/usr/bin/sailfishos-browser-searchengines dbus
+User=root
