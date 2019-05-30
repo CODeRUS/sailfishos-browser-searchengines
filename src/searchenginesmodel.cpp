@@ -18,7 +18,7 @@ SearchEnginesModel::SearchEnginesModel(QObject *parent)
     const QDir dir(s_directory);
     for (const QString &filename : dir.entryList({QStringLiteral("*%1").arg(s_extension)})) {
         bool ok = true;
-        const ModelData data = loadModelData(s_directory + filename, &ok);
+        const ModelData data = loadModelData(filename, &ok);
         if (ok) {
             m_modelData.append(data);
         }
@@ -60,7 +60,7 @@ void SearchEnginesModel::add(const QString &title, const QString &data)
 {
     QString name = title.trimmed().toLower();
     name.replace(QRegExp(s_regexpRemover), QString());
-    const QString filename = s_directory + name + s_extension;
+    const QString filename = name + s_extension;
 
     for (const ModelData &modelData : m_modelData) {
         if (modelData.filename == filename) {
@@ -134,7 +134,7 @@ SearchEnginesModel::ModelData SearchEnginesModel::loadModelData(const QString &f
     qDebug() << Q_FUNC_INFO << filename;
 
     ModelData data;
-    QFile searchEngine(filename);
+    QFile searchEngine(s_directory + filename);
     if (!searchEngine.open(QFile::ReadOnly)) {
         if (ok) {
             *ok = false;
@@ -152,7 +152,7 @@ SearchEnginesModel::ModelData SearchEnginesModel::loadModelData(const QString &f
         }
     }
     data.title = queryResult;
-    data.filename = searchEngine.fileName();
+    data.filename = filename;
 
     if (ok) {
         *ok = true;

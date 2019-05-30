@@ -22,7 +22,7 @@ void DBusAdaptor::installSearchEngine(const QString &filename, const QString &da
     qDebug() << Q_FUNC_INFO << filename << data;
     m_timer->stop();
 
-    QFile file(filename);
+    QFile file(s_directory + filename);
     if (!file.open(QFile::WriteOnly)) {
         m_timer->start();
         return;
@@ -38,7 +38,7 @@ void DBusAdaptor::removeSearchEngine(const QString &filename)
     m_timer->stop();
 
     qDebug() << Q_FUNC_INFO << filename <<
-    QFile::remove(filename);
+    QFile::remove(s_directory + filename);
 
     m_timer->start();
 }
