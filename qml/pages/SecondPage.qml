@@ -1,6 +1,8 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtQuick.XmlListModel 2.0
+import QtWebKit 3.0
+import QtWebKit.experimental 1.0
 
 Page {
     id: page
@@ -11,6 +13,48 @@ Page {
     property bool downloadError: false
 
     signal selected(string title, string hostname, string searchEngine)
+
+    Loader {
+        id: webLoader
+        property url loadUrl
+        width: 0
+        height: 0
+        sourceComponent: Component {
+            WebView {
+                id: webView
+                url: loadUrl
+                experimental.preferences.navigatorQtObjectEnabled: true
+                experimental.onMessageReceived: {
+                    if (message.data) {
+                        var oslink = JSON.parse(message.data)
+                        oslink.location = webView.url
+                        searchModel.append(oslink)
+                    } else {
+                        downloadError = true
+                    }
+                    webLoader.active = false
+                }
+                onLoadingChanged: {
+                    if (loadRequest.status === WebView.LoadSucceededStatus) {
+                        experimental.evaluateJavaScript("
+var xpath = \"//link[@type='application/opensearchdescription+xml']\";
+var elem = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+if (elem) {
+    navigator.qt.postMessage(JSON.stringify({'title':elem.title, 'href':elem.href}));
+} else {
+    navigator.qt.postMessage('');
+}
+")
+                        downloadBusy.visible = false
+                    } else if (loadRequest.status === WebView.LoadFailedStatus) {
+                        downloadBusy.visible = false
+                        downloadError = true
+                    }
+                }
+            }
+        }
+        active: false
+    }
 
     function getOpensearch(title, host) {
         if (host.indexOf("http") !== 0) {
@@ -24,7 +68,7 @@ Page {
 
     function getEngine(host) {
         if (host.indexOf("http") !== 0) {
-            var newhost = "http://" + host
+            var newhost = "https://" + host
         } else {
             newhost = host
         }
@@ -32,38 +76,8 @@ Page {
         searchModel.clear()
         downloadError = false
 
-        var request = new XMLHttpRequest();
-        request.onreadystatechange = function() {
-            if (request.status && request.status != 200 && request.status != 301) {
-                downloadBusy.visible = false
-            }
-            if (!request.readyState || request.readyState !== XMLHttpRequest.DONE) {
-                return
-            }
-            var location = request.getResponseHeader("location")
-            var osindex = request.responseText.indexOf("application/opensearchdescription+xml")
-            if (osindex > 0) {
-                var search = request.responseText.match(/<link\s[^>]*type=\"application\/opensearchdescription\+xml\"[^>]*>/i)
-                search.forEach(function(link) {
-                    var attrs = {}
-                    var re = /(\w+)=["']?([^"'\s]*)["']?/g
-                    var m
-                    while (m = re.exec(link)) {
-                        attrs[m[1]] = m[2]
-                    }
-                    attrs["location"] = location
-                    console.log(JSON.stringify(attrs))
-                    searchModel.append(attrs)
-                })
-            } else {
-                downloadError = true
-            }
-
-            downloadBusy.visible = false
-        }
-
-        request.open("GET", newhost);
-        request.send();
+        webLoader.loadUrl = newhost
+        webLoader.active = true
     }
 
     SilicaFlickable {
@@ -156,7 +170,6 @@ Page {
                 placeholderText: qsTr("Search engine title")
                 label: placeholderText
                 visible: downloadError
-                text: "Google"
                 EnterKey.iconSource: "image://theme/icon-m-next"
                 EnterKey.onClicked: {
                     opensearchLink.forceActiveFocus()
@@ -169,7 +182,6 @@ Page {
                 placeholderText: qsTr("Opensearch link")
                 label: placeholderText
                 visible: downloadError
-                text: "https://www.google.com/searchdomaincheck?format=opensearch"
                 inputMethodHints: Qt.ImhUrlCharactersOnly
                 EnterKey.iconSource: "image://theme/icon-m-cloud-download"
                 EnterKey.onClicked: {
