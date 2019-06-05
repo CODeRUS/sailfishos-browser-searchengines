@@ -39,7 +39,14 @@ INSTALLS += dbusConf
 CONFIG += sailfishapp_i18n
 
 TRANSLATIONS += \
-    translations/sailfishos-browser-searchengines-ru.ts
+    translations/sailfishos-browser-searchengines-de.ts \
+    translations/sailfishos-browser-searchengines-en.ts \
+    translations/sailfishos-browser-searchengines-es.ts \
+    translations/sailfishos-browser-searchengines-fr_FR.ts \
+    translations/sailfishos-browser-searchengines-pl.ts \
+    translations/sailfishos-browser-searchengines-ru.ts \
+    translations/sailfishos-browser-searchengines-sl.ts \
+    translations/sailfishos-browser-searchengines-sv.ts
 
 appicon.sizes = \
     86 \

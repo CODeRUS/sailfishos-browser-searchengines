@@ -1,69 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ru">
+<TS version="2.1" language="sl">
 <context>
     <name>CoverPage</name>
     <message>
         <source>Search engines</source>
-        <translation>Поисковые системы</translation>
+        <translation>Iskalniki</translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
     <message>
         <source>Search engines</source>
-        <translation>Поисковые системы</translation>
+        <translation>Poišči iskalnike</translation>
     </message>
     <message>
         <source>Add search engine</source>
-        <translation>Добавить</translation>
+        <translation>Dodaj iskalnik</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Удалить</translation>
+        <translation>Odstrani</translation>
     </message>
 </context>
 <context>
     <name>SecondPage</name>
     <message>
         <source>Search hostname</source>
-        <translation>Адрес поисковой системы</translation>
+        <translation>Išči po imenu gostitelja</translation>
     </message>
     <message>
         <source>Add search engine</source>
-        <translation>Добавить поисковую систему</translation>
+        <translation>Dodaj iskalnik</translation>
     </message>
     <message>
         <source>Get search engine</source>
-        <translation>Добавить</translation>
+        <translation>Prodobi iskalnike</translation>
     </message>
     <message>
         <source>Available search engines</source>
-        <translation>Доступные системы</translation>
+        <translation>Razpoložljivi iskalniki</translation>
     </message>
     <message>
         <source>Installing search engine...</source>
-        <translation>Установка поисковой системы...</translation>
+        <translation>Nameščanje iskalnika ...</translation>
     </message>
     <message>
         <source>Click on search engine above to add</source>
-        <translation>Выберите поисковую систему</translation>
+        <translation>Za dodajanje kliknite na zgornji iskalnik</translation>
     </message>
     <message>
         <source>Can&apos;t find opensearch description. Please contact search provider and request adding opensearch description to html head.</source>
-        <translation>Не удалось найти описание поисковой системы. Вы можете связаться с поисковым провайдером и предложить добавить описание opensearch на странице поиска.</translation>
+        <translation>Ne najdem Opensearch opisa. Prosimo, kontaktirajte ponudnika iskalnika in predlagajte, da doda opensearch opis v glavo spletne strani.</translation>
     </message>
     <message>
         <source>Search engine title</source>
-        <translation>Заголовок поискового движка</translation>
+        <translation>Ime iskalnika</translation>
     </message>
     <message>
         <source>Opensearch link</source>
-        <translation>Ссылка opensearch</translation>
+        <translation>Opensearch povezava</translation>
     </message>
     <message>
         <source>Get opensearch</source>
-        <translation>Загрузить opensearch</translation>
+        <translation>Pridobi opensearch</translation>
     </message>
 </context>
 </TS>

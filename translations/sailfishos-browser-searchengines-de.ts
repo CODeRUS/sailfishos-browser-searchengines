@@ -1,69 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ru">
+<TS version="2.1" language="de">
 <context>
     <name>CoverPage</name>
     <message>
         <source>Search engines</source>
-        <translation>Поисковые системы</translation>
+        <translation>Suchmaschinen</translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
     <message>
         <source>Search engines</source>
-        <translation>Поисковые системы</translation>
+        <translation>Suchmaschinen</translation>
     </message>
     <message>
         <source>Add search engine</source>
-        <translation>Добавить</translation>
+        <translation>Suchmaschine hinzufügen</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Удалить</translation>
+        <translation>Entfernen</translation>
     </message>
 </context>
 <context>
     <name>SecondPage</name>
     <message>
         <source>Search hostname</source>
-        <translation>Адрес поисковой системы</translation>
+        <translation>Hostname der Suchmaschine</translation>
     </message>
     <message>
         <source>Add search engine</source>
-        <translation>Добавить поисковую систему</translation>
+        <translation>Suchmaschine hinzufügen</translation>
     </message>
     <message>
         <source>Get search engine</source>
-        <translation>Добавить</translation>
+        <translation>Suchmaschine abrufen</translation>
     </message>
     <message>
         <source>Available search engines</source>
-        <translation>Доступные системы</translation>
+        <translation>Verfügbare Suchmaschinen</translation>
     </message>
     <message>
         <source>Installing search engine...</source>
-        <translation>Установка поисковой системы...</translation>
+        <translation>Installiere Suchmaschine …</translation>
     </message>
     <message>
         <source>Click on search engine above to add</source>
-        <translation>Выберите поисковую систему</translation>
+        <translation>Klicke oben auf die Suchmaschine, um sie hinzuzufügen.</translation>
     </message>
     <message>
         <source>Can&apos;t find opensearch description. Please contact search provider and request adding opensearch description to html head.</source>
-        <translation>Не удалось найти описание поисковой системы. Вы можете связаться с поисковым провайдером и предложить добавить описание opensearch на странице поиска.</translation>
+        <translation>Die Opensearch-Beschreibung kann nicht gefunden werden. Bitte wende dich an den Suchanbieter und fordere ihn auf die Opensearch-Beschreibung zum HTML-Head hinzuzufügen.</translation>
     </message>
     <message>
         <source>Search engine title</source>
-        <translation>Заголовок поискового движка</translation>
+        <translation>Titel der Suchmaschine</translation>
     </message>
     <message>
         <source>Opensearch link</source>
-        <translation>Ссылка opensearch</translation>
+        <translation>Opensearch-Link</translation>
     </message>
     <message>
         <source>Get opensearch</source>
-        <translation>Загрузить opensearch</translation>
+        <translation>Opensearch abrufen</translation>
     </message>
 </context>
 </TS>
