@@ -1,6 +1,6 @@
 TARGET = sailfishos-browser-searchengines
 
-QT += network dbus xmlpatterns
+QT += network dbus
 CONFIG += sailfishapp
 
 SOURCES += \

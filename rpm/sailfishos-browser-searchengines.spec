@@ -16,7 +16,6 @@ BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Network)
 BuildRequires:  pkgconfig(Qt5DBus)
-BuildRequires:  pkgconfig(Qt5XmlPatterns)
 BuildRequires:  desktop-file-utils
 BuildRequires:  sailfish-svg2png
 

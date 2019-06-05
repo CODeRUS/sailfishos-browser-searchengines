@@ -4,7 +4,6 @@
 #include <QDBusMessage>
 #include <QDebug>
 #include <QDir>
-#include <QXmlQuery>
 #include <QXmlStreamReader>
 
 static const QString s_directory = QStringLiteral("/usr/lib/mozembedlite/chrome/embedlite/content/");
