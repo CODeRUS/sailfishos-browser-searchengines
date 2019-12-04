@@ -1,11 +1,23 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import org.nemomobile.dbus 2.0
 import org.coderus.searchengines 1.0
 
 Page {
     id: page
 
     allowedOrientations: Orientation.All
+
+    DBusInterface {
+        id: settingsDBus
+        service: "com.jolla.settings"
+        path: "/com/jolla/settings/ui"
+        iface: "com.jolla.settings.ui"
+
+        function openBrowserSettings() {
+            call("showPage", ["applications/sailfish-browser.desktop"])
+        }
+    }
 
     function getEngine(title, hostname, searchEngine) {
         if (searchEngine.indexOf("//") === 0) {
@@ -44,6 +56,13 @@ Page {
         id: listView
         model: SearchEnginesModel {
             id: searchEnginesModel
+        }
+
+        PullDownMenu {
+            MenuItem {
+                text: qsTr("Open Browser settings")
+                onClicked: settingsDBus.openBrowserSettings()
+            }
         }
 
         anchors.fill: parent
