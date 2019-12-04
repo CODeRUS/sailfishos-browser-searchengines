@@ -36,6 +36,10 @@ dbusConf.files = dbus/org.coderus.searchengines.conf
 dbusConf.path = /etc/dbus-1/system.d/
 INSTALLS += dbusConf
 
+systemd.files = systemd/org.coderus.searchengines.service
+systemd.path = /lib/systemd/system
+INSTALLS += systemd
+
 CONFIG += sailfishapp_i18n
 
 TRANSLATIONS += \

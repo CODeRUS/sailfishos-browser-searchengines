@@ -3,7 +3,7 @@
 
 Name:       sailfishos-browser-searchengines
 Summary:    Manipulate Sailfish Browser search engines
-Version:    1.0.5
+Version:    1.0.6
 Release:    1
 Group:      Qt/Qt
 License:    WTFPL
@@ -52,3 +52,4 @@ dbus-send --system --type=method_call --dest=org.freedesktop.DBus / org.freedesk
 
 %{_sysconfdir}/dbus-1/system.d/org.coderus.searchengines.conf
 %{_datadir}/dbus-1/system-services/org.coderus.searchengines.service
+/lib/systemd/system/org.coderus.searchengines.service

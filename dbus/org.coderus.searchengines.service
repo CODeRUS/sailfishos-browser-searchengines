@@ -1,5 +1,6 @@
 [D-BUS Service]
 Name=org.coderus.searchengines
 Interface=org.coderus.searchengines
-Exec=/usr/bin/sailfishos-browser-searchengines dbus
+Exec=/bin/false
 User=root
+SystemdService=org.coderus.searchengines.service

@@ -1,0 +1,9 @@
+[Unit]
+Description=Searchemgines Installer
+After=dbus.socket
+Requires=dbus.socket
+
+[Service]
+Type=dbus
+ExecStart=/usr/bin/sailfishos-browser-searchengines dbus
+BusName=org.coderus.searchengines
