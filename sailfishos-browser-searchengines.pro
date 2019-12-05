@@ -42,6 +42,10 @@ INSTALLS += systemd
 
 CONFIG += sailfishapp_i18n
 
+ts_devel.files = translations/sailfishos-browser-searchengines.ts
+ts_devel.path = /usr/share/translations
+INSTALLS += ts_devel
+
 TRANSLATIONS += \
     translations/sailfishos-browser-searchengines-de.ts \
     translations/sailfishos-browser-searchengines-en.ts \

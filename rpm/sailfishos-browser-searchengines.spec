@@ -22,6 +22,14 @@ BuildRequires:  sailfish-svg2png
 %description
 Short description of my Sailfish OS Application
 
+%package ts-devel
+Summary:    Manipulate Sailfish Browser search engines
+Group:      Qt/Qt
+BuildArch:  noarch
+Requires:   %{name}
+
+%description ts-devel
+%{summary}.
 
 %prep
 %setup -q -n %{name}-%{version}
@@ -53,3 +61,7 @@ dbus-send --system --type=method_call --dest=org.freedesktop.DBus / org.freedesk
 %{_sysconfdir}/dbus-1/system.d/org.coderus.searchengines.conf
 %{_datadir}/dbus-1/system-services/org.coderus.searchengines.service
 /lib/systemd/system/org.coderus.searchengines.service
+
+%files ts-devel
+%defattr(-,root,root,-)
+%{_datadir}/translations/%{name}.ts
