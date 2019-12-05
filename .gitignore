@@ -1,4 +1,8 @@
 
 *.yaml
 
-*.user
+*.user*
+
+.build*
+
+*.rpm
