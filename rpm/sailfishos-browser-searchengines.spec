@@ -3,7 +3,7 @@
 
 Name:       sailfishos-browser-searchengines
 Summary:    Manipulate Sailfish Browser search engines
-Version:    1.0.6
+Version:    1.0.7
 Release:    1
 Group:      Qt/Qt
 License:    WTFPL
