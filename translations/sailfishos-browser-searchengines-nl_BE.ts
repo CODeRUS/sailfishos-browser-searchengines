@@ -1,73 +1,71 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl_BE" version="2.1">
 <context>
     <name>CoverPage</name>
     <message>
         <source>Search engines</source>
-        <translation>Search engines</translation>
+        <translation>Zoekmachienen</translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
     <message>
         <source>Search engines</source>
-        <translation>Search engines</translation>
+        <translation>Zoekmachienen</translation>
     </message>
     <message>
         <source>Add search engine</source>
-        <translation>Add search engine</translation>
+        <translation>Zoekmachien toevoegen</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Remove</translation>
+        <translation>Verwijderen</translation>
     </message>
     <message>
         <source>Open Browser settings</source>
-        <translation>Open Browser settings</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>SecondPage</name>
     <message>
         <source>Search hostname</source>
-        <translation>Search hostname</translation>
+        <translation>Hostnaam zoeken</translation>
     </message>
     <message>
         <source>Add search engine</source>
-        <translation>Add search engine</translation>
+        <translation>Zoekmachien toevoegen</translation>
     </message>
     <message>
         <source>Get search engine</source>
-        <translation>Get search engine</translation>
+        <translation>Zoekmachien ophalen</translation>
     </message>
     <message>
         <source>Available search engines</source>
-        <translation>Available search engines</translation>
+        <translation>Beschikbare zoekmachienen</translation>
     </message>
     <message>
         <source>Installing search engine...</source>
-        <translation>Installing search engine...</translation>
+        <translation>Zoekmachien wordt geïnstalleerd…</translation>
     </message>
     <message>
         <source>Click on search engine above to add</source>
-        <translation>Click on search engine above to add</translation>
+        <translation>Tikt op ’t zoekmachien hierboven voor ’t toe te voegen</translation>
     </message>
     <message>
         <source>Can&apos;t find opensearch description. Please contact search provider and request adding opensearch description to html head.</source>
-        <translation>Can&apos;t find opensearch description. Please contact search provider and request adding opensearch description to html head.</translation>
+        <translation>Kan geen opensearch-beschrijving vinden. Neemt contact op me de zoekleverancier en vraagt voor een opensearch-beschrijving toe te voegen aan de html-hoofding.</translation>
     </message>
     <message>
         <source>Search engine title</source>
-        <translation>Search engine title</translation>
+        <translation>Naam van zoekmachien</translation>
     </message>
     <message>
         <source>Opensearch link</source>
-        <translation>Opensearch link</translation>
+        <translation>Opensearch-koppeling</translation>
     </message>
     <message>
         <source>Get opensearch</source>
-        <translation>Get opensearch</translation>
+        <translation>Opensearch ophalen</translation>
     </message>
 </context>
 </TS>

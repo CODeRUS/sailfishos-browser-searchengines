@@ -12,7 +12,7 @@
     <name>FirstPage</name>
     <message>
         <source>Search engines</source>
-        <translation>Poišči iskalnike</translation>
+        <translation>Iskalniki</translation>
     </message>
     <message>
         <source>Add search engine</source>
@@ -22,12 +22,16 @@
         <source>Remove</source>
         <translation>Odstrani</translation>
     </message>
+    <message>
+        <source>Open Browser settings</source>
+        <translation>Odpri nastavitve brskalnika</translation>
+    </message>
 </context>
 <context>
     <name>SecondPage</name>
     <message>
         <source>Search hostname</source>
-        <translation>Išči po imenu gostitelja</translation>
+        <translation>Išči po imenu gostitelja </translation>
     </message>
     <message>
         <source>Add search engine</source>
@@ -35,23 +39,23 @@
     </message>
     <message>
         <source>Get search engine</source>
-        <translation>Prodobi iskalnike</translation>
+        <translation>Prodobi iskalnike </translation>
     </message>
     <message>
         <source>Available search engines</source>
-        <translation>Razpoložljivi iskalniki</translation>
+        <translation>Prodobi iskalnike </translation>
     </message>
     <message>
         <source>Installing search engine...</source>
-        <translation>Nameščanje iskalnika ...</translation>
+        <translation>Nameščanje iskalnika ... </translation>
     </message>
     <message>
         <source>Click on search engine above to add</source>
-        <translation>Za dodajanje kliknite na zgornji iskalnik</translation>
+        <translation>Nameščanje iskalnika ... </translation>
     </message>
     <message>
         <source>Can&apos;t find opensearch description. Please contact search provider and request adding opensearch description to html head.</source>
-        <translation>Ne najdem Opensearch opisa. Prosimo, kontaktirajte ponudnika iskalnika in predlagajte, da doda opensearch opis v glavo spletne strani.</translation>
+        <translation>Ne najdem Opensearch opisa. Prosimo, kontaktirajte ponudnika iskalnika in predlagajte, da doda opensearch opis v glavo spletne strani. </translation>
     </message>
     <message>
         <source>Search engine title</source>

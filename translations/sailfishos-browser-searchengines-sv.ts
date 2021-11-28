@@ -22,6 +22,10 @@
         <source>Remove</source>
         <translation>Ta bort</translation>
     </message>
+    <message>
+        <source>Open Browser settings</source>
+        <translation>Öppna webbläsarinställningarna</translation>
+    </message>
 </context>
 <context>
     <name>SecondPage</name>
