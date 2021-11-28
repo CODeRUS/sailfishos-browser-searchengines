@@ -4,3 +4,6 @@ X-Nemo-Application-Type=silica-qt5
 Icon=sailfishos-browser-searchengines
 Exec=sailfishos-browser-searchengines
 Name=Search engines
+
+[X-Sailjail]
+Sandboxing=Disabled

@@ -16,6 +16,7 @@ BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Network)
 BuildRequires:  pkgconfig(Qt5DBus)
+BuildRequires:  pkgconfig(systemd)
 BuildRequires:  desktop-file-utils
 BuildRequires:  sailfish-svg2png
 
@@ -36,7 +37,8 @@ Requires:   %{name}
 
 %build
 
-%qtc_qmake5 
+%qtc_qmake5 \
+    SPEC_UNITDIR=%{_unitdir}
 
 %qtc_make %{?_smp_mflags}
 
@@ -60,7 +62,7 @@ dbus-send --system --type=method_call --dest=org.freedesktop.DBus / org.freedesk
 
 %{_sysconfdir}/dbus-1/system.d/org.coderus.searchengines.conf
 %{_datadir}/dbus-1/system-services/org.coderus.searchengines.service
-/lib/systemd/system/org.coderus.searchengines.service
+%{_unitdir}/org.coderus.searchengines.service
 
 %files ts-devel
 %defattr(-,root,root,-)

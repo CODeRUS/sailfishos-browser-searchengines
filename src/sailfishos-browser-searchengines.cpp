@@ -1,6 +1,5 @@
 #include <QtQuick>
 #include <sailfishapp.h>
-#include <cstring>
 
 #include <QTimer>
 #include <QDebug>

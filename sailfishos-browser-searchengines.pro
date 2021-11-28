@@ -2,6 +2,7 @@ TARGET = sailfishos-browser-searchengines
 
 QT += network dbus
 CONFIG += sailfishapp
+PKGCONFIG += libsystemd
 
 SOURCES += \
     src/sailfishos-browser-searchengines.cpp \
@@ -37,7 +38,7 @@ dbusConf.path = /etc/dbus-1/system.d/
 INSTALLS += dbusConf
 
 systemd.files = systemd/org.coderus.searchengines.service
-systemd.path = /lib/systemd/system
+systemd.path = $$SPEC_UNITDIR
 INSTALLS += systemd
 
 CONFIG += sailfishapp_i18n
@@ -79,5 +80,3 @@ appicon.path = /usr/share/icons/hicolor/
 INSTALLS += appicon
 
 CONFIG += sailfish-svg2png
-
-INCLUDEPATH += /usr/include
